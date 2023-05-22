@@ -13,13 +13,13 @@ export const Hero = () => {
           </h1>
         </Reveal>
         <Reveal>
-          <h2 className={styles.subTitle}>
+        <h2 className={styles.subTitle}>
             I&apos;m a <span>FronteEnd Developer</span>
           </h2>
         </Reveal>
         <Reveal>
-          <p className={styles.aboutCopy}>
-           With two years of experience under my belt, I love crafting amazing things on the web. From pixel-perfect designs to seamless interactions, I bring websites to life with a sprinkle of magic. Join me on this exciting journey of turning ideas into eye-catching digital experiences. Let's create something awesome together!
+        <p className={styles.aboutCopy}>
+           With two years of experience under my belt, I love crafting amazing things on the web. From pixel-perfect designs to seamless interactions, I bring websites to life with a sprinkle of magic. Join me on this exciting journey of turning ideas into eye-catching digital experiences. Let&apos;s create something awesome together!
           </p>
         </Reveal>
         <Reveal>
