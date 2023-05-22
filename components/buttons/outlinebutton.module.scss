@@ -42,3 +42,8 @@
   left: 0;
   top: 0;
 }
+@media (max-width: 640px) {
+  .outlineButton{
+    padding: 0.8rem 1.8rem;
+  }
+}
