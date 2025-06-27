@@ -13,26 +13,35 @@ export const About = () => {
         <div>
           <Reveal>
             <p className={`${styles.aboutText} ${styles.highlightFirstLetter}`}>
-              Hey! I&apos;m Jonas, if you haven&apos;t already gathered that by
-              now. I am a frontend developer from lagos, Nigeria.
+              Hey! I&apos;m Jonas if you haven&apos;t already gathered that by
+              now. I am a JavaScript engineer based in Lagos, Nigeria.
             </p>
           </Reveal>
           <Reveal>
             <p className={styles.aboutText}>
-              I have gained about two years of experience working with several teams to build a variety of products, ranging from e-commerce and healthcare to file management systems.
+              For the past four years, I’ve helped startups and teams across
+              industries build reliable, user-focused software using JavaScript.
+              My focus has been on modern web interfaces, and my work spans
+              mental health platforms, fintech dashboards, file collaboration
+              tools, and more. While my expertise lies in frontend development,
+              I have collaborated closely with backend teams to deliver complete
+              solutions.
             </p>
           </Reveal>
           <Reveal>
             <p className={styles.aboutText}>
-              In addition to my professional work, I am also passionate about contributing to the community, which is why I have volunteered with several organizations, including the Black Mental Health Matters organization
+              I’ve led frontend architecture on client projects, contributed to
+              design systems, and occasionally worked across the stack when the
+              product demanded it. I care deeply about writing clean,
+              maintainable code and delivering features that solve real
+              problems.
             </p>
           </Reveal>
           <Reveal>
             <p className={styles.aboutText}>
-              I&apos;m actively looking for new positions where I can use my
-              love for code to solve real problems. If you think
-              you&apos;ve got an opening that I might like, let&apos;s connect
-              🔗
+              I’m currently open to engineering roles or contracts where I can
+              use my JavaScript expertise to build meaningful products and grow
+              with a collaborative team. Let’s connect 🔗
             </p>
           </Reveal>
           <Reveal>
