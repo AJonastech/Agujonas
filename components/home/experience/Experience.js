@@ -61,30 +61,5 @@ const experience = [
       "Framer Motion",
       "React Query",
     ],
-  },
-  {
-    title: "FrenBox",
-    position: "Frontend Developer",
-    time: "Mar 2022 - Nov 2024",
-    location: "Remote",
-    description:
-      "Developed core features for a cloud storage platform including file upload, sharing, and permission management workflows with real-time sync. Implemented scalable content indexing and search logic.",
-    tech: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "React Query",
-      "Styled Components",
-      "WebSockets",
-    ],
-  },
-  {
-    title: "BMHM, USAF",
-    position: "Volunteer React Developer",
-    time: "Apr 2023 - Feb 2024",
-    location: "Remote",
-    description:
-      "Built and maintained accessible, responsive UI components for a mental health support platform serving the Black community. Collaborated with a global team to implement new pages and improve design consistency.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "React Router", "Material UI"],
-  },
+  }
 ];
