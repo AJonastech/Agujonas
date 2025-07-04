@@ -14,27 +14,77 @@ export const Experience = () => {
 
 const experience = [
   {
-    title: "FrenBox",
-    position: "Frontend Developer",
-    time: "2022 - Present",
-    location: "Akure, Ondo",
+    title: "365Tax.de",
+    position: "Senior Frontend Engineer",
+    time: "Dec 2024 - Present",
+    location: "Freelance",
     description:
-      "I help build and manage the web user interface with a team of other wonderful developers",
+      "Designing and implementing banking and invoice automation systems for self-employed users and SMEs, with FinAPI integration for real-time financial insights.",
     tech: [
-      "Next",
-      "React",
-      "Typescript",
-      "React Query",
-      "Styled components",
+      "Next.js",
+      "TypeScript",
+      "Zustand",
+      "Tanstack Query",
+      "Tailwind CSS",
+      "FinAPI Integration",
     ],
   },
   {
-    title: "BMHM",
-    position: "Volunteer Frontend Engineer",
-    time: "2022-present",
+    title: "Allos AI",
+    position: "Frontend Developer",
+    time: "Oct 2024 - Mar 2025",
+    location: "Freelance",
+    description:
+      "Delivered a sophisticated causal inference platform within 4 weeks, building complex data tooling, graph editors, and causal discovery interfaces that exceeded performance expectations.",
+    tech: [
+      "React",
+      "TypeScript",
+      "React Flow",
+      "React Query",
+      "Zustand",
+      "Tailwind CSS",
+      "Shadcn UI",
+    ],
+  },
+  {
+    title: "Vuhosi",
+    position: "Founding Engineer",
+    time: "Mar 2024 - Oct 2024",
+    location: "Freelance",
+    description:
+      "Designed and implemented the full frontend architecture for an investment analysis platform, optimizing data rendering pipelines and visualizations to achieve a 4× increase in analyst throughput.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "React Query",
+    ],
+  },
+  {
+    title: "FrenBox",
+    position: "Frontend Developer",
+    time: "Mar 2022 - Nov 2024",
     location: "Remote",
     description:
-      "Frontend Engineer, helping to build wonderful products for the black community",
-    tech: ["React", "typescript", "tailwindcss", "react router", "Material Ui"],
-  }
+      "Developed core features for a cloud storage platform including file upload, sharing, and permission management workflows with real-time sync. Implemented scalable content indexing and search logic.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "React Query",
+      "Styled Components",
+      "WebSockets",
+    ],
+  },
+  {
+    title: "BMHM, USAF",
+    position: "Volunteer React Developer",
+    time: "Apr 2023 - Feb 2024",
+    location: "Remote",
+    description:
+      "Built and maintained accessible, responsive UI components for a mental health support platform serving the Black community. Collaborated with a global team to implement new pages and improve design consistency.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "React Router", "Material UI"],
+  },
 ];
