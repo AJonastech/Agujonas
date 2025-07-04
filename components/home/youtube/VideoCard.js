@@ -60,8 +60,8 @@ export const VideoCard = ({
         
         <Reveal>
           <p className={styles.videoDescription}>
-            {description.length > 100 
-              ? `${description.substring(0, 100)}...` 
+            {description.length > 120 
+              ? `${description.substring(0, 120)}...` 
               : description}
           </p>
         </Reveal>

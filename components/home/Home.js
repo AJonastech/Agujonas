@@ -5,8 +5,8 @@ import styles from "./home.module.scss";
 import { Heading } from "../nav/Heading";
 import { About } from "./about/About";
 import { Projects } from "./projects/Projects";
+import { Youtube } from "./youtube/Youtube"; 
 import { Experience } from "./experience/Experience";
-import { Youtube } from "./youtube/Youtube"; // Import the YouTube component
 import { Contact } from "./contact/Contact";
 
 export const Home = () => {
@@ -19,8 +19,8 @@ export const Home = () => {
           <Hero />
           <About />
           <Projects />
+          <Youtube /> {/* Moved before Experience */}
           <Experience />
-          <Youtube /> {/* Add the YouTube section */}
           <Contact />
           <div
             style={{
