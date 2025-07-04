@@ -1,7 +1,7 @@
 import styles from "./projectmodal.module.scss";
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
@@ -10,8 +10,8 @@ export const ProjectModal = ({
   modalContent,
   projectLink,
   setIsOpen,
-  imgSrc,
   isOpen,
+  imgSrc,
   title,
   code,
   tech,
@@ -54,12 +54,17 @@ export const ProjectModal = ({
               Project Links<span>.</span>
             </p>
             <div className={styles.links}>
-              <Link target="_blank" rel="nofollow" href={code}>
-                <AiFillGithub /> source code
-              </Link>
-              <Link target="_blank" rel="nofollow" href={projectLink}>
-                <AiOutlineExport /> live project
-              </Link>
+              {code && (
+                <Link href={code} target="_blank" rel="nofollow">
+                  <AiFillGithub size="2.5rem" />
+                </Link>
+              )}
+
+              {projectLink && (
+                <Link href={projectLink} target="_blank" rel="nofollow">
+                  <AiOutlineExport size="2.5rem" />
+                </Link>
+              )}
             </div>
           </div>
         </div>

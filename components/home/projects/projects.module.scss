@@ -30,6 +30,41 @@
   }
 }
 
+.progressBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff9800;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.privateBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.privateLock {
+  position: absolute;
+  font-size: 0.8rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+}
+
 .projectCopy {
   margin: 1.6rem 0;
 }
@@ -91,4 +126,13 @@
   color: var(--brand);
 
   margin: 0.8rem 0;
+}
+
+.disabledLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #666; /* Dimmed color to indicate disabled state */
+  cursor: not-allowed;
 }

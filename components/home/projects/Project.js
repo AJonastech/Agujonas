@@ -14,6 +14,8 @@ export const Project = ({
   title,
   code,
   tech,
+  inProgress,
+  privateRepo,
 }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -50,6 +52,12 @@ export const Project = ({
           onClick={() => setIsOpen(true)}
           className={styles.projectImage}
         >
+          {inProgress && (
+            <div className={styles.progressBadge}>Work in Progress</div>
+          )}
+          {privateRepo && (
+            <div className={styles.privateBadge}>Private Repo</div>
+          )}
           <img
             src={imgSrc}
             alt={`An image of the ${title} project.`}
@@ -65,13 +73,24 @@ export const Project = ({
               <h4>{title}</h4>
               <div className={styles.projectTitleLine} />
 
-              <Link href={code} target="_blank" rel="nofollow">
-                <AiFillGithub size="2.8rem" />
-              </Link>
+              {/* Render GitHub link only if code URL exists, otherwise render just the icon */}
+              {code ? (
+                <Link href={code} target="_blank" rel="nofollow">
+                  <AiFillGithub size="2.8rem" />
+                  {privateRepo && <span className={styles.privateLock}>🔒</span>}
+                </Link>
+              ) : (
+                <div className={styles.disabledLink}>
+                  <AiFillGithub size="2.8rem" />
+                  <span className={styles.privateLock}>🔒</span>
+                </div>
+              )}
 
-              <Link href={projectLink} target="_blank" rel="nofollow">
-                <AiOutlineExport size="2.8rem" />
-              </Link>
+              {projectLink && (
+                <Link href={projectLink} target="_blank" rel="nofollow">
+                  <AiOutlineExport size="2.8rem" />
+                </Link>
+              )}
             </div>
           </Reveal>
           <Reveal>
@@ -92,7 +111,7 @@ export const Project = ({
         isOpen={isOpen}
         imgSrc={imgSrc}
         title={title}
-        code={code}
+        code={code || ""} // Ensure code is never undefined
         tech={tech}
       />
     </>

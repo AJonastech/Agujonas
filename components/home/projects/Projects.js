@@ -18,107 +18,115 @@ export const Projects = () => {
 
 const projects = [
   {
-    title: "Efood",
-    imgSrc: "project-imgs/efood.png",
-    code: "https://github.com/AJonastech/efood-ecommerceApplication",
-    projectLink: "https://efood-ecommerce-application.vercel.app",
-    tech: ["ReactJs", "Sanity.io", "GoogleAuth", "Tailwindcss"],
+    title: "Facetime",
+    imgSrc: "project-imgs/facetime.png",
+    code: "https://github.com/AJonastech/videoapp",
+    projectLink: "https://videoapp-murex.vercel.app/",
+    tech: ["Next.js", "Stream SDK", "WebRTC", "Socket.io", "Tailwind CSS"],
     description:
-      "A web application for making food orders.",
+      "A real-time video conferencing application with multi-user support and low-latency communications.",
     modalContent: (
       <>
         <p>
-      Efood is a fullstack ecommerce application that lets users order food and gives cart functionality.
+          Facetime is a sophisticated video conferencing platform built on Next.js and Stream Video SDK, enabling real-time communication with minimal latency.
         </p>
         <p>
-          The tech stack is built on reactjs, and then connected to sanity.io. I used Groq to handle
-          queries to the backend.
+          The application leverages WebRTC protocols for peer-to-peer connections and implements adaptive bitrate streaming to optimize video quality based on network conditions.
         </p>
         <p>
-          I also used Googleauth to verify users and store their data before they can checkout
-        </p>
-      
-      </>
-    ),
-  },
-  {
-    title: "Cornea Clinic",
-    imgSrc: "project-imgs/medical.png",
-    code: "https://github.com/Hemdee1/medical-system",
-    projectLink: "https://medical-system.vercel.app/profile/dashboard",
-    tech: ["Node", "", "Next", "Tailwindcss", "Material UI"],
-    description:
-      "An application to make and manage medical appointments and health records..",
-    modalContent: (
-      <>
-        <p>
-          The cornea project is a project for managing and booking appointments for health checkups.
-        </p>
-        <p>
-       I worked primarily on the frontend part of the application, using nextjs, tailwindcss and material UI.
-        </p>
-        <p>
-          The team in total consists of 3 developers. We had a great time building this application.
-        </p>
-    
-    
-      </>
-    ),
-  },
-  {
-    title: "TwoLinks",
-    imgSrc: "project-imgs/twolinks.png",
-    code: "https://github.com/AJonastech/twolinks-tesr",
-    projectLink: "https://twolinks-tesr.vercel.app",
-    tech: ["ReactS", "Tailwindcss", "Groq", "Sanity"],
-    description:
-      "This application allows you to view professional profiles and job listings in both dark and light modes",
-    modalContent: (
-      <>
-        <p>
-         Two Links was fun project i built to be able to view profiles of professionals and see job listings( its still a work in progress tho).
-        </p>
-        <p>
-         I used react context to manage the state for the theme color, so the project has dark and light themes.
+          Key features include end-to-end encryption, screen sharing capabilities, chat functionality.
         </p>
       </>
     ),
   },
   {
-    title: "Workflo",
-    imgSrc: "project-imgs/workflo.png",
-    code: "https://github.com/AJonastech/WORKFLOW",
-    projectLink: "https://workflow-6c672.web.app",
-    tech: ["ReactJS", "Tailwindcss"],
+    title: "Padihold",
+    imgSrc: "project-imgs/padihold.png",
+    code: "https://github.com/AJonastech/padiHold",
+    projectLink: "https://padi-hold.vercel.app",
+    tech: ["Node.js", "Next.js", "Tailwind CSS", "Radix UI", "Framer Motion", "Zod", "Zustand"],
     description:
-      "Nothing much here, just a basic application for categorizing work items.",
+      "The Nigerian way to secure transactions. Nigeria's leading escrow platform. Secure your online transactions with trusted dispute resolution and fund protection.",
+    inProgress: true,
     modalContent: (
       <>
-        <p>This was basically my first react project</p>
         <p>
-          Instead of just building an app that allows you to perform CRUD on a list of items, i decided to 
-          add the functionality of being able to group and classify items.
+          Padihold is Nigeria&apos;s leading escrow platform designed to secure online transactions with trusted dispute resolution and fund protection.
         </p>
-   
+        <p>
+          I developed this solution to address the unique trust challenges in Nigerian online commerce, creating a reliable third-party system that protects both buyers and sellers.
+        </p>
+        <p>
+          The platform features secure payment holding, transparent transaction tracking, and an efficient dispute resolution process that gives users peace of mind when conducting business online.
+        </p>
       </>
     ),
   },
   {
-    title: "Winsden",
-    imgSrc: "project-imgs/winsden.png",
-    code: "https://github.com/AJonastech/ease",
-    projectLink: "https://ease-goo5.vercel.app",
-    tech: ["ReactJS", "Tailwindcss", "Framer-motion"],
+    title: "365Tax",
+    imgSrc: "project-imgs/365tax.png",
+    projectLink: "https://365tax.de",
+    tech: ["Nextjs","Zustand", "Tailwindcss", "Tanstack query", "Shadcn UI"],
     description:
-      "A very simple and basic landing page",
+      "A comprehensive tax advisory and consulting platform for businesses and individuals in Germany, offering digital tax solutions and expert guidance.",
+    privateRepo: true,
     modalContent: (
       <>
-        <p>I basically built this project just for fun.</p>
         <p>
-          I used frsamer-motion to perform some basic animations as well.
+          365Tax is a modern tax advisory platform focused on providing expert tax consulting services for businesses and individuals across Germany.
         </p>
-   
+        <p>
+          The application features a responsive design with intuitive navigation, showcasing services like tax declarations, financial accounting, payroll accounting, and business consulting.
+        </p>
+        <p>
+          I implemented multilingual support (German/English) and a streamlined contact system to connect users with tax professionals for personalized consultations.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Allos Ai",
+    imgSrc: "project-imgs/allosai.png",
+    privateRepo: true,
+    projectLink: "https://development.d2s1ad5lt18uie.amplifyapp.com/",
+    tech: ["ReactJS", "Tailwindcss", "React Flow", "React Query", "Zustand", "Zod", "shadcn UI"],
+    description:
+      "A complex data analysis tool for causal discovery and inference, handling datasets with millions of rows and dozens of columns.",
+    modalContent: (
+      <>
+        <p>
+          Allos AI is a sophisticated data analysis platform that processes large-scale datasets with millions of rows and dozens of columns.
+        </p>
+        <p>
+          I implemented advanced causal discovery and causal inference capabilities, allowing users to identify relationships between variables and make data-driven decisions.
+        </p>
+        <p>
+          The application features an interactive graph tool built with React Flow canvas that enables users to visualize and manipulate complex data relationships dynamically.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Vuhosi",
+    imgSrc: "project-imgs/vuhosi.png",
+    projectLink: "https://www.vuhosi.com/",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "React query"],
+    description:
+      "A modern digital platform for a premier consulting firm specializing in strategic business solutions.",
+    privateRepo: true,
+    modalContent: (
+      <>
+        <p>
+          Vuhosi is a sophisticated web platform for a consulting company that delivers professional business solutions.
+        </p>
+        <p>
+          The site features an elegant, responsive design with smooth animations and intuitive navigation to showcase the company&apos;s services and expertise.
+        </p>
+        <p>
+          I implemented performance optimizations and SEO best practices to ensure excellent user experience and visibility.
+        </p>
       </>
     ),
   }
 ];
+
