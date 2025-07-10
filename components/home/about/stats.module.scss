@@ -24,3 +24,20 @@
 
   margin-bottom: 4.8rem;
 }
+
+.learningChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  background: linear-gradient(90deg, var(--background-light), rgba(var(--brand-rgb), 0.2));
+  border: 1px solid rgba(var(--brand-rgb), 0.3);
+}
+
+.beginnerBadge {
+  font-size: 0.6rem;
+  padding: 0.1rem 0.3rem;
+  background-color: rgba(var(--brand-rgb), 0.25);
+  border-radius: 4px;
+  font-weight: 400;
+}

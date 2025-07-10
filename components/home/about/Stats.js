@@ -1,5 +1,5 @@
 import styles from "./stats.module.scss";
-import { AiFillCode, AiFillSmile } from "react-icons/ai";
+import { AiFillCode, AiFillSmile, AiOutlineThunderbolt } from "react-icons/ai";
 import { Reveal } from "@/components/utils/Reveal";
 
 export const Stats = () => {
@@ -21,7 +21,7 @@ export const Stats = () => {
             <span className="chip">GitHub</span>
             <span className="chip">Jira</span>
             <span className="chip">Next.js</span>
-
+            <span className="chip">Python</span>
           </div>
         </div>
       </Reveal>
@@ -37,6 +37,20 @@ export const Stats = () => {
             <span className="chip">Framer-motion</span>
             <span className="chip">Groq</span>
             <span className="chip">Figma</span>
+          </div>
+        </div>
+      </Reveal>
+      <Reveal>
+        <div className={styles.statColumn}>
+          <h4>
+            <AiOutlineThunderbolt size="2.4rem" color="var(--brand)" />
+            <span>Currently learning</span>
+          </h4>
+          <div className={styles.statGrid}>
+            <span className={`chip ${styles.learningChip}`}>
+              Go
+              <span className={styles.beginnerBadge}>Beginner</span>
+            </span>
           </div>
         </div>
       </Reveal>

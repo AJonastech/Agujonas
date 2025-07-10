@@ -45,6 +45,32 @@ a {
   text-decoration: none;
 }
 
+/* Add this to hide the default cursor */
+html,
+body,
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+.section-wrapper {
+  cursor: none !important;
+}
+
+/* Disable on mobile/touch devices */
+@media (hover: none) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  .section-wrapper {
+    cursor: auto !important;
+  }
+}
+
 .section-wrapper {
   position: relative;
   z-index: 10;

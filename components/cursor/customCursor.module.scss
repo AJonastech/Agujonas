@@ -1,0 +1,45 @@
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 70px; // Slightly smaller size to reduce pixelation
+  height: 70px;
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+  filter: contrast(1.05) brightness(1.05); // Enhance image quality
+}
+
+.cursorImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  image-rendering: -webkit-optimize-contrast; // Improve image clarity on webkit browsers
+  image-rendering: crisp-edges; // Modern browsers image rendering
+  transform: translateZ(0); // Force GPU acceleration
+  backface-visibility: hidden; // Prevent flickering
+  border: 1px solid rgba(255, 255, 255, 0.15); // Add subtle border
+}
+
+.cursorRing {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 75px;
+  height: 75px;
+  border: 2px solid var(--brand);
+  border-radius: 50%;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.6;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .cursor,
+  .cursorRing {
+    display: none;
+  }
+}
