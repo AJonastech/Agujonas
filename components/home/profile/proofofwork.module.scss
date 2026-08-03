@@ -22,13 +22,55 @@
   }
 }
 
+// Preview frame holds three stacked layers: a colorful backdrop (revealed on
+// hover), the screenshot (scales down + dims on hover to reveal it), and the
+// title (slides from top-left to top-center).
 .preview {
-  aspect-ratio: 16 / 10;
+  position: relative;
+  aspect-ratio: 16 / 11;
   border-radius: 0.8rem;
   overflow: hidden;
   background: var(--ink-deep, #090a0c);
   border: 1px solid var(--wire);
-  display: flex;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.45s ease;
+}
+
+.previewTitle {
+  position: absolute;
+  z-index: 2;
+  top: 1.4rem;
+  left: 1.8rem;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  transition: left 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.shot {
+  position: absolute;
+  top: 4.6rem;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: -1.2rem;
+  z-index: 1;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  transform-origin: center bottom;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease;
 
   img {
     width: 100%;
@@ -38,38 +80,29 @@
   }
 }
 
-.terminal {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.termBar {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.9rem 1.1rem;
-  border-bottom: 1px solid var(--wire);
-
-  span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--wire);
+// Hover: reveal the backdrop, scale the screenshot down toward the bottom so
+// more color shows above it, and center the title.
+.card:hover {
+  .backdrop {
+    opacity: 1;
   }
-  span:first-child {
-    background: rgba(var(--alert-rgb), 0.7);
+  .shot {
+    transform: scale(0.78) translateY(-1.2rem);
+    box-shadow: 0 1.6rem 3.6rem rgba(0, 0, 0, 0.5);
+  }
+  .previewTitle {
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0e1013;
   }
 }
 
-.terminal pre {
-  flex: 1;
-  margin: 0;
-  padding: 1.4rem;
-  font-family: var(--font-mono);
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: var(--signal);
-  white-space: pre-wrap;
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .shot,
+  .previewTitle {
+    transition: none;
+  }
 }
 
 .cardBody {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./profile.module.scss";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FiPaperclip } from "react-icons/fi";
+import { ThemeToggle } from "./ThemeToggle";
 
 // Cover banner + avatar + name/role/socials + bio. Mirrors the reference
 // header: a full-bleed cover with an italic tagline, an avatar overlapping
@@ -55,6 +56,7 @@ export const ProfileHeader = () => {
             >
               <AiFillLinkedin size="2rem" />
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </div>

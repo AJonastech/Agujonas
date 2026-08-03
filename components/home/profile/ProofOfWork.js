@@ -2,46 +2,36 @@ import Link from "next/link";
 import styles from "./proofofwork.module.scss";
 import { FiArrowUpRight } from "react-icons/fi";
 
-// Card grid mirroring the reference "Proof of Work": a preview panel on top,
-// title + external link, description, tag chips (with a +N overflow pill).
+// Card grid mirroring the reference "Proof of Work". Each card has a preview
+// frame with a hover interaction: a colorful backdrop is revealed as the
+// screenshot scales down and dims, and the title slides from top-left to
+// top-center. See proofofwork.module.scss for the transition.
 const work = [
   {
-    title: "Job Aggregation Platform",
-    href: "",
-    preview: {
-      lines: [
-        "$ kubectl get pods -n aggregation",
-        "webhook-proxy    Running ✓",
-        "onet-matcher     Running ✓",
-        "ingest-workers   Running ✓ x12",
-        "vector-index     Running ✓",
-      ],
-    },
+    title: "Quiqorder",
+    href: "https://www.tryquiqorder.com/",
+    img: "/project-imgs/qo_project.png",
+    backdrop: "/project-imgs-backdrop/project-bg-new-portfolio-color-waves.webp",
     description:
-      "A distributed system of 34 microservices processing millions of job listings daily — webhook proxy, encryption boundaries, and real-time O*NET semantic matching over vector search.",
-    tags: ["Python", "Django", "Kubernetes", "vector search"],
+      "A WhatsApp-first social-commerce platform — storefront, automated chats and Status posts, payments, and order management from one dashboard.",
+    tags: ["Next.js", "WhatsApp API", "Payments"],
     extra: 2,
   },
   {
     title: "get.it",
-    href: "",
-    preview: {
-      lines: [
-        "$ svc status get.it",
-        "state       building",
-        "integrates  job-platform mesh",
-        "// details coming soon",
-      ],
-    },
+    href: "https://techsensedev.com/work/get-it",
+    img: "/project-imgs/getit_project.png",
+    backdrop: "/project-imgs-backdrop/project-bg-runehub-rays.webp",
     description:
-      "A professional networking platform built as a standalone service integrated into the existing job-platform infrastructure. Details coming soon.",
-    tags: ["Python", "microservices"],
-    extra: 1,
+      "A job-aggregation and professional-networking platform built on a distributed system of 34 microservices, mostly in Go — with real-time O*NET semantic matching over vector search.",
+    tags: ["Go", "microservices", "vector search"],
+    extra: 2,
   },
   {
     title: "Facetime",
     href: "https://videoapp-murex.vercel.app/",
     img: "/project-imgs/facetime.png",
+    backdrop: "/project-imgs-backdrop/project-bg-runeai-soft-waves.webp",
     description:
       "A real-time video conferencing app with multi-user support and low-latency WebRTC communications.",
     tags: ["Next.js", "Stream SDK", "WebRTC"],
@@ -51,6 +41,7 @@ const work = [
     title: "365Tax",
     href: "https://365tax.de",
     img: "/project-imgs/365tax.png",
+    backdrop: "/project-imgs-backdrop/project-bg-old-portfolio-red-waves.webp",
     description:
       "Banking and invoice automation for SMEs across Europe — ZUGFeRD/XRechnung, FinAPI, Stripe, deployed on AWS ECS/EC2.",
     tags: ["Next.js", "FinAPI", "Stripe"],
@@ -60,6 +51,7 @@ const work = [
     title: "Allos AI",
     href: "https://development.d2s1ad5lt18uie.amplifyapp.com/",
     img: "/project-imgs/allosai.png",
+    backdrop: "/project-imgs-backdrop/project-bg-new-portfolio-color-waves.webp",
     description:
       "Causal-inference and causal-discovery tooling with React Flow node graphs over datasets with millions of rows.",
     tags: ["React", "React Flow", "React Query"],
@@ -69,6 +61,7 @@ const work = [
     title: "Padihold",
     href: "https://padi-hold.vercel.app",
     img: "/project-imgs/padihold.png",
+    backdrop: "/project-imgs-backdrop/project-bg-runeai-soft-waves.webp",
     description:
       "Nigeria's escrow platform — secure transaction holding with trusted dispute resolution and fund protection.",
     tags: ["Next.js", "Node.js", "Zustand"],
@@ -77,22 +70,26 @@ const work = [
 ];
 
 const Card = ({ item }) => {
-  const inner = (
-    <>
+  return (
+    <Link
+      href={item.href}
+      target="_blank"
+      rel="noreferrer"
+      className={styles.card}
+    >
       <div className={styles.preview}>
-        {item.img ? (
-          // eslint-disable-next-line @next/next/no-img-element
+        {/* Colorful backdrop revealed on hover */}
+        <div
+          className={styles.backdrop}
+          style={{ backgroundImage: `url(${item.backdrop})` }}
+          aria-hidden="true"
+        />
+        {/* Title slides top-left → top-center on hover */}
+        <span className={styles.previewTitle}>{item.title}</span>
+        <div className={styles.shot}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={item.img} alt={`${item.title} preview`} />
-        ) : (
-          <div className={styles.terminal}>
-            <div className={styles.termBar}>
-              <span />
-              <span />
-              <span />
-            </div>
-            <pre>{item.preview?.lines?.join("\n")}</pre>
-          </div>
-        )}
+        </div>
       </div>
       <div className={styles.cardBody}>
         <div className={styles.cardTitle}>
@@ -111,20 +108,7 @@ const Card = ({ item }) => {
           ) : null}
         </div>
       </div>
-    </>
-  );
-
-  return item.href ? (
-    <Link
-      href={item.href}
-      target="_blank"
-      rel="noreferrer"
-      className={styles.card}
-    >
-      {inner}
     </Link>
-  ) : (
-    <div className={styles.card}>{inner}</div>
   );
 };
 

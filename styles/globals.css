@@ -21,6 +21,8 @@
   /* Surfaces derived from ink */
   --surface: #16191d; /* raised panel */
   --surface-2: #1e2227; /* hover / chip background */
+  --ink-raise: #16191d; /* logo tiles, chips */
+  --ink-deep: #090a0c; /* preview frames, deepest wells */
 
   /* ---- Legacy aliases (do not remove until all modules migrate) ---- */
   --background: var(--ink);
@@ -44,6 +46,31 @@
   --font-display: var(--font-hanken-grotesk), "Hanken Grotesk", system-ui, sans-serif;
   --font-body: "Satoshi", system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ------------------------------------------------------------------ */
+/* Light theme — flips the value of each surface/text token so every   */
+/* module that reads --ink (as bg) / --paper (as text) inverts without  */
+/* being touched. Accents (signal/alert) stay constant across themes.   */
+/* ------------------------------------------------------------------ */
+[data-theme="light"] {
+  --ink: #edeeea; /* now the page background */
+  --ink-rgb: 237, 238, 234;
+  --paper: #16181c; /* now the primary text */
+  --paper-rgb: 22, 24, 28;
+  --signal: #1f9e73; /* darker teal for contrast on light */
+  --signal-rgb: 31, 158, 115;
+  --alert: #b9702f;
+  --alert-rgb: 185, 112, 47;
+  --wire: #d3d4cf; /* hairlines / dividers on light */
+  --muted: #5c626b;
+
+  --surface: #f6f7f3;
+  --surface-2: #e6e7e2;
+  --ink-raise: #f2f3ef;
+  --ink-deep: #e2e3de;
+
+  --background-dark: #dcddd7;
 }
 
 * {
@@ -155,5 +182,44 @@ a {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme-toggle transition: a circle clip-path that spreads outward    */
+/* from the toggle button, driven by the View Transitions API. The     */
+/* --circle-x/y/r vars are set inline by the toggle before switching.  */
+/* ------------------------------------------------------------------ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Keep the old (previous theme) frame on top and reveal the new theme  */
+/* underneath via the expanding circle. */
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+html[data-vt="active"]::view-transition-new(root) {
+  animation: circle-spread 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes circle-spread {
+  from {
+    clip-path: circle(0 at var(--circle-x, 50%) var(--circle-y, 50%));
+  }
+  to {
+    clip-path: circle(var(--circle-r, 150vmax) at var(--circle-x, 50%) var(--circle-y, 50%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-vt="active"]::view-transition-new(root) {
+    animation: none;
   }
 }

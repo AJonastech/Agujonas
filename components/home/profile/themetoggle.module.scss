@@ -1,0 +1,24 @@
+// Circular icon button matching the social icons in the profile header.
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border: 1px solid var(--wire);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: 0.2s color, 0.2s border-color;
+
+  &:hover {
+    color: var(--signal);
+    border-color: rgba(var(--signal-rgb), 0.5);
+  }
+}
+
+.icon {
+  display: inline-flex;
+  font-size: 1.8rem;
+}
