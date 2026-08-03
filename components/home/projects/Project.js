@@ -11,7 +11,9 @@ export const Project = ({
   projectLink,
   description,
   imgSrc,
+  poster,
   title,
+  org,
   code,
   tech,
   inProgress,
@@ -58,19 +60,40 @@ export const Project = ({
           {privateRepo && (
             <div className={styles.privateBadge}>Private Repo</div>
           )}
-          <img
-            src={imgSrc}
-            alt={`An image of the ${title} project.`}
-            style={{
-              width: hovered ? "90%" : "85%",
-              rotate: hovered ? "2deg" : "0deg",
-            }}
-          />
+          {imgSrc ? (
+            <img
+              src={imgSrc}
+              alt={`An image of the ${title} project.`}
+              style={{
+                width: hovered ? "90%" : "85%",
+                rotate: hovered ? "2deg" : "0deg",
+              }}
+            />
+          ) : (
+            // Systems projects have no screenshot — render a terminal-style
+            // poster instead of a broken image.
+            <div className={styles.poster}>
+              <div className={styles.posterBar}>
+                <span />
+                <span />
+                <span />
+              </div>
+              <pre className={styles.posterBody}>
+                {poster?.lines?.join("\n")}
+              </pre>
+              {poster?.label && (
+                <div className={styles.posterLabel}>{poster.label}</div>
+              )}
+            </div>
+          )}
         </div>
         <div className={styles.projectCopy}>
           <Reveal width="100%">
             <div className={styles.projectTitle}>
-              <h4>{title}</h4>
+              <h4>
+                {title}
+                {org && <span className={styles.projectOrg}>@ {org}</span>}
+              </h4>
               <div className={styles.projectTitleLine} />
 
               {/* Render GitHub link only if code URL exists, otherwise render just the icon */}

@@ -1,0 +1,70 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+  padding: 1.8rem;
+  border: 1px solid var(--wire);
+  border-radius: 1rem;
+  margin-bottom: 1.4rem;
+  transition: 0.2s border-color;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:hover {
+    border-color: rgba(var(--signal-rgb), 0.4);
+  }
+}
+
+.commitIcon {
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  color: var(--signal);
+  margin-top: 0.2rem;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--paper);
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.detail {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.arrow {
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}

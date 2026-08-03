@@ -1,0 +1,77 @@
+.lead {
+  font-size: var(--text-sm);
+  font-weight: 300;
+  color: var(--paper);
+  margin-bottom: 2.8rem;
+}
+
+// Single horizontal row that scrolls infinitely. The track holds two copies
+// of the list and slides left by exactly half its width, so the loop is seamless.
+.marquee {
+  overflow: hidden;
+  // Fade the row out at both edges.
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 3.2rem;
+  animation: stack-scroll 40s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes stack-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: 0.2s color;
+
+  &:hover {
+    color: var(--paper);
+  }
+}
+
+.icon {
+  font-size: 3.2rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    flex-wrap: wrap;
+  }
+}

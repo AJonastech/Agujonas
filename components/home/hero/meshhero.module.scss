@@ -1,0 +1,55 @@
+.meshHero {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+
+  // The canvas fills the hero bleed
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+// Static fallback for reduced-motion / low-end / SSR loading state:
+// a quiet radial suggestion of the mesh, no WebGL.
+.poster {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      42rem 42rem at 78% 42%,
+      rgba(var(--signal-rgb), 0.14),
+      transparent 60%
+    ),
+    radial-gradient(
+      28rem 28rem at 62% 68%,
+      rgba(var(--alert-rgb), 0.06),
+      transparent 55%
+    ),
+    var(--ink);
+}
+
+// Left scrim: copy sits on the left, mesh weight on the right, so a
+// horizontal fade keeps text legible without hiding the visual.
+.scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--ink) 0%,
+    rgba(var(--ink-rgb), 0.72) 32%,
+    rgba(var(--ink-rgb), 0) 64%
+  );
+
+  @media (max-width: 768px) {
+    background: linear-gradient(
+      90deg,
+      var(--ink) 0%,
+      rgba(var(--ink-rgb), 0.8) 45%,
+      rgba(var(--ink-rgb), 0.35) 100%
+    );
+  }
+}

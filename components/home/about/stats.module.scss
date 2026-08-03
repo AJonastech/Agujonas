@@ -3,41 +3,37 @@
 }
 
 .statColumn {
-  h4 {
-    display: flex;
-    align-items: center;
+  margin-bottom: 4rem;
+}
 
-    margin-bottom: 2.4rem;
-    span {
-      font-size: var(--text-md);
-      font-weight: bold;
-      position: relative;
-      margin-left: 0.8rem;
-    }
-  }
+.columnHead {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--wire);
 }
 
 .statGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2rem;
-
-  margin-bottom: 4.8rem;
+  gap: 1rem;
 }
 
 .learningChip {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  position: relative;
-  background: linear-gradient(90deg, var(--background-light), rgba(var(--brand-rgb), 0.2));
-  border: 1px solid rgba(var(--brand-rgb), 0.3);
+  gap: 0.6rem;
+  border-color: rgba(var(--alert-rgb), 0.4);
+  color: var(--paper);
 }
 
 .beginnerBadge {
-  font-size: 0.6rem;
-  padding: 0.1rem 0.3rem;
-  background-color: rgba(var(--brand-rgb), 0.25);
+  font-size: 1rem;
+  padding: 0.1rem 0.5rem;
+  background-color: rgba(var(--alert-rgb), 0.18);
+  color: var(--alert);
   border-radius: 4px;
   font-weight: 400;
+  letter-spacing: 0.02em;
 }

@@ -18,6 +18,83 @@ export const Projects = () => {
 
 const projects = [
   {
+    title: "Job Aggregation Platform",
+    org: "Techsense",
+    poster: {
+      label: "34 microservices · millions of jobs/day",
+      lines: [
+        "$ kubectl get pods -n aggregation",
+        "webhook-proxy      Running   ✓",
+        "onet-matcher       Running   ✓",
+        "ingest-workers     Running   ✓ x12",
+        "vector-index       Running   ✓",
+      ],
+    },
+    privateRepo: true,
+    tech: [
+      "Python",
+      "Django",
+      "Kubernetes",
+      "vector search",
+      "webhook proxy",
+      "EC2 / Caddy",
+    ],
+    description:
+      "A distributed system of 34 microservices processing millions of job listings daily — webhook proxy with encryption boundaries, real-time O*NET semantic matching over vector search, orchestrated on Kubernetes.",
+    modalContent: (
+      <>
+        <p>
+          The core platform I work on at Techsense: a large-scale job-aggregation
+          system spanning 34 microservices, ingesting and classifying millions of
+          listings per day.
+        </p>
+        <p>
+          I designed a webhook proxy service that receives inbound requests and
+          fans them out to configured downstream services, managing encryption on
+          the way in and decryption on the way out, plus a request-management
+          layer that simplifies configuration for each route.
+        </p>
+        <p>
+          I also built an embedding-based semantic matching system that classifies
+          incoming listings against O*NET occupation codes in real time using
+          vector search, and manage deployment orchestration on Kubernetes across
+          staging and production, with backend services on EC2 behind Caddy for
+          auto-SSL.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "get.it",
+    org: "Techsense",
+    poster: {
+      label: "professional networking · standalone service",
+      lines: [
+        "$ svc status get.it",
+        "state        building",
+        "integrates   job-platform mesh",
+        "// details coming soon",
+      ],
+    },
+    inProgress: true,
+    privateRepo: true,
+    tech: ["Python", "microservices", "TBD"],
+    description:
+      "A professional networking platform built as a new standalone service integrated into the existing job-platform infrastructure. Details coming soon.",
+    modalContent: (
+      <>
+        <p>
+          get.it is a professional networking platform I&apos;m currently
+          engineering as a standalone service that plugs into Techsense&apos;s
+          existing microservice infrastructure.
+        </p>
+        <p>
+          More detail on this one soon — it&apos;s actively in progress.
+        </p>
+      </>
+    ),
+  },
+  {
     title: "Facetime",
     imgSrc: "project-imgs/facetime.png",
     code: "https://github.com/AJonastech/videoapp",

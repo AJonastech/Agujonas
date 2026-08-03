@@ -1,0 +1,174 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  position: relative;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--wire);
+  }
+}
+
+.rowOpen {
+  .chevron {
+    color: var(--signal);
+    border-color: rgba(var(--signal-rgb), 0.5);
+  }
+}
+
+.rowMain {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  padding: 2rem 0;
+  background: none;
+  border: none;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--wire);
+  background: var(--ink-raise, #16191d);
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.company {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--paper);
+  transition: 0.2s color;
+
+  &:hover {
+    color: var(--signal);
+  }
+}
+
+.linkIcon {
+  font-size: 1.4rem;
+  color: var(--muted);
+}
+
+.role {
+  font-size: 1.5rem;
+  color: var(--muted);
+}
+
+.summary {
+  margin-top: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--muted);
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.rowRight {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-top: 0.4rem;
+}
+
+.time {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--muted);
+  white-space: nowrap;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--muted);
+  border: 1px solid var(--wire);
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  flex-shrink: 0;
+  transition: 0.2s transform, 0.2s color, 0.2s border-color;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  color: var(--signal);
+  border-color: rgba(var(--signal-rgb), 0.5);
+}
+
+// Expanded detail: a bulleted list with teal square markers (per reference).
+.detail {
+  list-style: none;
+  padding: 0 0 2.2rem 6rem;
+  max-width: 66rem;
+
+  @media (max-width: 600px) {
+    padding-left: 0;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.9rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--paper);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 6px;
+      height: 6px;
+      background: var(--signal);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

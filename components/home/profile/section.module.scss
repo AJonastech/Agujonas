@@ -1,0 +1,40 @@
+.section {
+  padding: 4rem 0.8rem;
+  // Fine dotted separator between sections (radial dots read cleaner than
+  // CSS `dotted` borders, which render as chunky squares).
+  border-top: none;
+  background-image: radial-gradient(circle, var(--wire) 1px, transparent 1px);
+  background-position: 0 0;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.8rem;
+}
+
+.sectionLabel {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--muted);
+}
+
+.sectionMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--muted);
+  opacity: 0.7;
+
+  &::before {
+    content: "•";
+    color: var(--wire);
+  }
+}

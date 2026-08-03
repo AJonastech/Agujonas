@@ -11,11 +11,36 @@
   z-index: 20;
   background: var(--bg-opaque);
   backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--wire);
 
   font-size: var(--text-md);
   font-weight: bold;
 
   @media (max-width: 768px) {
     padding: 0 2.4rem;
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.live {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.liveLabel {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+
+  @media (max-width: 768px) {
+    display: none;
   }
 }

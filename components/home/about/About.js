@@ -13,35 +13,40 @@ export const About = () => {
         <div>
           <Reveal>
             <p className={`${styles.aboutText} ${styles.highlightFirstLetter}`}>
-              Hey! I&apos;m Jonas if you haven&apos;t already gathered that by
-              now. I am a JavaScript engineer based in Lagos, Nigeria.
+              I&apos;m Agu Jonas, a software engineer based in Lagos, Nigeria.
+              These days I spend most of my time in the backend and the
+              infrastructure under it.
             </p>
           </Reveal>
           <Reveal>
             <p className={styles.aboutText}>
-              For the past four years, I’ve helped startups and teams across
-              industries build reliable, user-focused software using JavaScript.
-              My focus has been on modern web interfaces, and my work spans
-              mental health platforms, fintech dashboards, file collaboration
-              tools, and more. While my expertise lies in frontend development,
-              I have collaborated closely with backend teams to deliver complete
-              solutions.
+              At Techsense I maintain and build across a distributed system of
+              34 microservices powering a job-aggregation platform that
+              processes millions of listings a day, orchestrated on Kubernetes
+              across staging and production. I designed a webhook proxy service
+              that receives inbound requests and fans them out to configured
+              downstream services — handling the encryption on the way in and
+              decryption on the way out — and built an embedding-based semantic
+              matching system that classifies incoming listings against O*NET
+              occupation codes in real time using vector search.
             </p>
           </Reveal>
           <Reveal>
             <p className={styles.aboutText}>
-              I’ve led frontend architecture on client projects, contributed to
-              design systems, and occasionally worked across the stack when the
-              product demanded it. I care deeply about writing clean,
-              maintainable code and delivering features that solve real
-              problems.
+              I got here through the frontend, and I haven&apos;t left it behind.
+              I&apos;ve shipped banking and invoice automation for SMEs across
+              Europe (FinAPI, Stripe, ZUGFeRD/XRechnung), built causal-inference
+              tooling and nodal network visualizations for a pharma AI platform,
+              and maintained accessible UI for a mental-health platform. That
+              range is the point: I can reason about a system from the service
+              mesh all the way out to the interface.
             </p>
           </Reveal>
           <Reveal>
             <p className={styles.aboutText}>
-              I’m currently open to engineering roles or contracts where I can
-              use my JavaScript expertise to build meaningful products and grow
-              with a collaborative team. Let’s connect 🔗
+              I care about systems that stay up, data that stays secure, and code
+              that the next person can actually read. Open to engineering roles
+              where that matters. Let&apos;s connect 🔗
             </p>
           </Reveal>
           <Reveal>
