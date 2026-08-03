@@ -1,31 +1,37 @@
-.list {
-  display: flex;
-  flex-direction: column;
+// One bordered card wrapping all rows, with hairline dividers between them —
+// matching the reference's "Selected Engineering Work" panel.
+.card {
+  border: 1px solid var(--wire);
+  border-radius: 1.4rem;
+  padding: 0.8rem 2.4rem;
 }
 
 .row {
   display: flex;
-  align-items: flex-start;
-  gap: 1.4rem;
-  padding: 1.8rem;
-  border: 1px solid var(--wire);
-  border-radius: 1rem;
-  margin-bottom: 1.4rem;
-  transition: 0.2s border-color;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 2.4rem 0;
+  color: inherit;
 
-  &:last-child {
-    margin-bottom: 0;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--wire);
   }
-  &:hover {
-    border-color: rgba(var(--signal-rgb), 0.4);
+
+  &:hover .arrow {
+    color: var(--signal);
+    border-color: rgba(var(--signal-rgb), 0.5);
+  }
+  &:hover .title {
+    color: var(--signal);
   }
 }
 
 .commitIcon {
   flex-shrink: 0;
+  align-self: flex-start;
   font-size: 1.8rem;
   color: var(--signal);
-  margin-top: 0.2rem;
+  margin-top: 0.4rem;
 }
 
 .body {
@@ -36,35 +42,43 @@
 .top {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
   gap: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .title {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: var(--text-sm);
+  font-weight: 700;
   color: var(--paper);
+  transition: 0.2s color;
 }
 
 .year {
   font-family: var(--font-mono);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--muted);
   flex-shrink: 0;
 }
 
 .detail {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.55;
   color: var(--muted);
 }
 
+// Boxed arrow button on the right (rounded square, hairline border).
 .arrow {
   flex-shrink: 0;
-  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border: 1px solid var(--wire);
+  border-radius: 1rem;
+  font-size: 1.8rem;
   color: var(--muted);
-  margin-top: 0.2rem;
+  transition: 0.2s color, 0.2s border-color;
 }

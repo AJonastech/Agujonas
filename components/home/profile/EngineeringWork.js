@@ -1,40 +1,38 @@
 import styles from "./engineeringwork.module.scss";
-import { FiGitCommit, FiArrowUpRight } from "react-icons/fi";
+import { FiGitBranch, FiArrowUpRight } from "react-icons/fi";
 
-// Commit-style log of shipped work, mirroring the reference's
-// "Selected Engineering Work" list.
+// Selected engineering work — deep-dive case studies, mirroring the
+// reference's card: git-branch icon, title + year inline, description below,
+// and a boxed arrow button on the right.
 const commits = [
   {
-    title: "Webhook proxy: fan inbound requests to 30+ downstream services",
+    title: "get.it: professional networking on a microservice mesh",
     detail:
-      "Encryption on ingress, decryption on egress, per-route config management.",
+      "Built the get.it platform as a standalone service on the Techsense mesh — profiles, connections, and real-time O*NET semantic matching over vector search.",
     year: "2025",
+    href: "https://techsensedev.com/work/get-it",
   },
   {
-    title: "Real-time O*NET classification via vector search",
+    title: "NotJustEvent: events and experiences platform",
     detail:
-      "Embedding-based semantic matching of incoming listings at ingest time.",
+      "Engineered the NotJustEvent product surface and backend services within the Techsense infrastructure.",
     year: "2025",
-  },
-  {
-    title: "Kubernetes orchestration across staging and production",
-    detail: "Deployment orchestration for a 34-microservice platform.",
-    year: "2025",
-  },
-  {
-    title: "Banking + invoice automation for EU SMEs",
-    detail:
-      "ZUGFeRD/XRechnung generation, FinAPI/Stripe/Etsy integration, automated reconciliation.",
-    year: "2024",
+    href: "https://techsensedev.com/work/notjustevent",
   },
 ];
 
 export const EngineeringWork = () => {
   return (
-    <div className={styles.list}>
+    <div className={styles.card}>
       {commits.map((c) => (
-        <div key={c.title} className={styles.row}>
-          <FiGitCommit className={styles.commitIcon} />
+        <a
+          key={c.title}
+          href={c.href}
+          target="_blank"
+          rel="noreferrer"
+          className={styles.row}
+        >
+          <FiGitBranch className={styles.commitIcon} />
           <div className={styles.body}>
             <div className={styles.top}>
               <span className={styles.title}>{c.title}</span>
@@ -42,8 +40,10 @@ export const EngineeringWork = () => {
             </div>
             <span className={styles.detail}>{c.detail}</span>
           </div>
-          <FiArrowUpRight className={styles.arrow} />
-        </div>
+          <span className={styles.arrow}>
+            <FiArrowUpRight />
+          </span>
+        </a>
       ))}
     </div>
   );

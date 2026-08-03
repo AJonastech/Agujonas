@@ -29,7 +29,6 @@
 .track {
   display: flex;
   width: max-content;
-  gap: 3.2rem;
   animation: stack-scroll 40s linear infinite;
 
   &:hover {
@@ -52,6 +51,9 @@
   align-items: center;
   gap: 0.9rem;
   flex-shrink: 0;
+  // Spacing lives on the item (not a track gap) so one full copy of the list
+  // is exactly 50% of the track width — the -50% loop stays seamless.
+  margin-right: 6.4rem;
   color: var(--muted);
   transition: 0.2s color;
 

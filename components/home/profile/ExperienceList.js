@@ -23,7 +23,6 @@ const experience = [
     role: "Co-founder & Engineer",
     time: "2025 — Present",
     initials: "QO",
-    logo: "/QO_logo.webp",
     accent: "#4fd1a0",
     link: "https://www.tryquiqorder.com/",
     summary:
