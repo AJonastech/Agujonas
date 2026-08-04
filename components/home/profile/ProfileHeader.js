@@ -68,6 +68,7 @@ export const ProfileHeader = () => {
         Senior Software Engineer with a track record of building resilient, distributed systems: from webhook proxy services and encrypted request pipelines to embedding-based semantic search across millions of job listings. I work comfortably across the stack, but I especially enjoy solving hard backend and infrastructure problems: service orchestration, secure data flows, and systems that need to scale without breaking. <span className={styles.bioLink}> Currently building Quiqorder.</span>
         </p>
       </div>
+      
     </header>
   );
 };
