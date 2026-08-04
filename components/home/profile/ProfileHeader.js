@@ -65,17 +65,7 @@ export const ProfileHeader = () => {
 
       <div className={styles.bio}>
         <p>
-          I turn systems problems into services that stay up.{" "}
-          <span className={styles.bioLink}>Currently building at Techsense</span>{" "}
-          — a 34-microservice job platform processing millions of listings a
-          day, plus{" "}
-          <span className={styles.bioLink}>get.it</span>, a professional
-          networking service on the same mesh. I design webhook pipelines and
-          encryption boundaries, run vector search against O*NET codes in real
-          time, and orchestrate it all on Kubernetes. I came up through the
-          frontend, so I can still take a system all the way to a polished
-          interface — but my center of gravity is the backend and the
-          infrastructure under it.
+        Senior Software Engineer with a track record of building resilient, distributed systems: from webhook proxy services and encrypted request pipelines to embedding-based semantic search across millions of job listings. I work comfortably across the stack, but I especially enjoy solving hard backend and infrastructure problems: service orchestration, secure data flows, and systems that need to scale without breaking. <span className={styles.bioLink}> Currently building Quiqorder.</span>
         </p>
       </div>
     </header>

@@ -138,6 +138,26 @@
   border-color: rgba(var(--signal-rgb), 0.5);
 }
 
+// Collapse/expand wrapper: animate grid-template-rows 0fr -> 1fr so the panel
+// slides open to its natural height without measuring it in JS.
+.detailWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.detailOpen {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.detailInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
 // Expanded detail: a bulleted list with teal square markers (per reference).
 .detail {
   list-style: none;

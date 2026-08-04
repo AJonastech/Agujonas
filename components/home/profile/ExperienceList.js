@@ -140,13 +140,17 @@ const Row = ({ item }) => {
           </span>
         </span>
       </div>
-      {open && (
-        <ul className={styles.detail}>
-          {item.bullets.map((point, i) => (
-            <li key={i}>{point}</li>
-          ))}
-        </ul>
-      )}
+      <div
+        className={`${styles.detailWrap} ${open ? styles.detailOpen : ""}`}
+      >
+        <div className={styles.detailInner}>
+          <ul className={styles.detail}>
+            {item.bullets.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
